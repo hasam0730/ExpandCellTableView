@@ -24,7 +24,7 @@ class CatalogTypeCell: UICollectionViewCell {
     
     var isPicked: Bool = false {
         didSet {
-            guard let uwrData = catalog else { return }
+//            guard let uwrData = catalog else { return }
             
         }
     }

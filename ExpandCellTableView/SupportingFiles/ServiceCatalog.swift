@@ -16,6 +16,6 @@ struct ServiceCategory {
 }
 struct ServiceGroup {
     var groupTitlte: String?
-    var serviceItem: [String]?
+    var serviceItemsList: [String]?
     var expanded: Bool!
 }

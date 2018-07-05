@@ -156,12 +156,12 @@ extension ViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return tempedDataList[groupIndex].serviceGroupList?[section].serviceItem?.count ?? 0
+        return tempedDataList[groupIndex].serviceGroupList?[section].serviceItemsList?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeue(ServiceCatalogItemCell.self, for: indexPath)
-        cell.config(with: tempedDataList[groupIndex].serviceGroupList?[indexPath.section].serviceItem?[indexPath.row] ?? "")
+        cell.config(with: tempedDataList[groupIndex].serviceGroupList?[indexPath.section].serviceItemsList?[indexPath.row] ?? "")
         return cell
     }
     
@@ -169,7 +169,7 @@ extension ViewController: UITableViewDataSource {
         let viewHeader = ExpandableHeaderView()
         let title = tempedDataList[groupIndex].serviceGroupList?[section].groupTitlte
         viewHeader.frame = CGRect(origin: CGPoint.zero, size: CGSize(width: catalogTbv.frame.width, height: 50))
-        viewHeader.customInit(title: title!, iconName: "", section: section, delegate: self)
+        viewHeader.customInit(title: title!, iconName: "", section: section, delegate: self, tbv: tableView)
         return viewHeader
     }
     
@@ -196,8 +196,7 @@ extension ViewController: UITableViewDelegate {
 }
 
 extension ViewController: ExpandableHeaderViewDelegate {
-    func toggleSection(section: Int) {
-        
+    func toggleSection(section: Int, in tbv: UITableView) {
         if let uwrIndex = previousSelectedIndex {
             let currv = catalogTbv.headerView(forSection: section) as! ExpandableHeaderView
             let previousv = catalogTbv.headerView(forSection: uwrIndex) as? ExpandableHeaderView
@@ -209,29 +208,29 @@ extension ViewController: ExpandableHeaderViewDelegate {
             }
         }
         previousSelectedIndex = section
-        
-        catalogTbv.beginUpdates()
-        
+
+        tbv.beginUpdates()
+
         // Hide rows of another sections
         for i in 0 ..< tempedDataList[groupIndex].serviceGroupList!.count where section != i {
             let isExpanded = tempedDataList[groupIndex].serviceGroupList![i].expanded
             if isExpanded == true {
                 tempedDataList[groupIndex].serviceGroupList![i].expanded = false
-                
+
                 for j in 0 ..< tempedDataList[groupIndex].serviceGroupList!.count {
                     catalogTbv.reloadRows(at: [IndexPath(row: j, section: i)], with: .automatic)
                 }
             }
         }
-        
+
         // Expand selected section
         let isExpanded = tempedDataList[groupIndex].serviceGroupList![section].expanded
-        
+
         tempedDataList[groupIndex].serviceGroupList?[section].expanded = !isExpanded!
-        
+
         for i in 0 ..< tempedDataList[groupIndex].serviceGroupList!.count {
             catalogTbv.reloadRows(at: [IndexPath(row: i, section: section)], with: .automatic)
         }
-        catalogTbv.endUpdates()
+        tbv.endUpdates()
     }
 }
