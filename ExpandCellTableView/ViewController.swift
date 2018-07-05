@@ -211,8 +211,8 @@ extension ViewController: ExpandableHeaderViewDelegate {
         previousSelectedIndex = section
         
         catalogTbv.beginUpdates()
-        // Hide rows of another sections
         
+        // Hide rows of another sections
         for i in 0 ..< tempedDataList[groupIndex].serviceGroupList!.count where section != i {
             let isExpanded = tempedDataList[groupIndex].serviceGroupList![i].expanded
             if isExpanded == true {
@@ -224,7 +224,7 @@ extension ViewController: ExpandableHeaderViewDelegate {
             }
         }
         
-        // Expand od hide rows of the selected section
+        // Expand selected section
         let isExpanded = tempedDataList[groupIndex].serviceGroupList![section].expanded
         
         tempedDataList[groupIndex].serviceGroupList?[section].expanded = !isExpanded!

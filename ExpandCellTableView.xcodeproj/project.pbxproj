@@ -22,6 +22,7 @@
 		A07C1D6720EDC7030070F3DD /* UITableView+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07C1D6520EDC7030070F3DD /* UITableView+extension.swift */; };
 		A07C1D6820EDC7030070F3DD /* UICollectionView+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07C1D6620EDC7030070F3DD /* UICollectionView+extension.swift */; };
 		A07C1D6A20EDCA430070F3DD /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07C1D6920EDCA430070F3DD /* UIView+Extension.swift */; };
+		A07C1D6D20EDD0A50070F3DD /* ExpandableCellTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07C1D6C20EDD0A50070F3DD /* ExpandableCellTableView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		A07C1D6520EDC7030070F3DD /* UITableView+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+extension.swift"; sourceTree = "<group>"; };
 		A07C1D6620EDC7030070F3DD /* UICollectionView+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UICollectionView+extension.swift"; sourceTree = "<group>"; };
 		A07C1D6920EDCA430070F3DD /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		A07C1D6C20EDD0A50070F3DD /* ExpandableCellTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandableCellTableView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,18 +77,11 @@
 			isa = PBXGroup;
 			children = (
 				A07C1D5C20EDC63E0070F3DD /* ServiceCatalogCells */,
+				A07C1D6B20EDD06B0070F3DD /* SupportingFiles */,
 				A07C1D5A20EDC5EF0070F3DD /* ExpandableHeaderView.swift */,
-				A07C1D5620EDC59D0070F3DD /* ServiceCatalog.swift */,
-				A07C1D4420EDC5830070F3DD /* AppDelegate.swift */,
 				A07C1D4620EDC5830070F3DD /* ViewController.swift */,
 				A07C1D4820EDC5830070F3DD /* Main.storyboard */,
-				A07C1D4B20EDC5850070F3DD /* Assets.xcassets */,
-				A07C1D4D20EDC5850070F3DD /* LaunchScreen.storyboard */,
-				A07C1D5020EDC5850070F3DD /* Info.plist */,
-				A07C1D5820EDC5DA0070F3DD /* Model.swift */,
-				A07C1D6520EDC7030070F3DD /* UITableView+extension.swift */,
-				A07C1D6620EDC7030070F3DD /* UICollectionView+extension.swift */,
-				A07C1D6920EDCA430070F3DD /* UIView+Extension.swift */,
+				A07C1D6C20EDD0A50070F3DD /* ExpandableCellTableView.swift */,
 			);
 			path = ExpandCellTableView;
 			sourceTree = "<group>";
@@ -100,6 +95,22 @@
 				A07C1D6020EDC63E0070F3DD /* CatalogTypeCell.xib */,
 			);
 			path = ServiceCatalogCells;
+			sourceTree = "<group>";
+		};
+		A07C1D6B20EDD06B0070F3DD /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				A07C1D4420EDC5830070F3DD /* AppDelegate.swift */,
+				A07C1D4B20EDC5850070F3DD /* Assets.xcassets */,
+				A07C1D4D20EDC5850070F3DD /* LaunchScreen.storyboard */,
+				A07C1D5020EDC5850070F3DD /* Info.plist */,
+				A07C1D5620EDC59D0070F3DD /* ServiceCatalog.swift */,
+				A07C1D5820EDC5DA0070F3DD /* Model.swift */,
+				A07C1D6520EDC7030070F3DD /* UITableView+extension.swift */,
+				A07C1D6620EDC7030070F3DD /* UICollectionView+extension.swift */,
+				A07C1D6920EDCA430070F3DD /* UIView+Extension.swift */,
+			);
+			path = SupportingFiles;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -176,6 +187,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A07C1D4720EDC5830070F3DD /* ViewController.swift in Sources */,
+				A07C1D6D20EDD0A50070F3DD /* ExpandableCellTableView.swift in Sources */,
 				A07C1D5720EDC59D0070F3DD /* ServiceCatalog.swift in Sources */,
 				A07C1D6820EDC7030070F3DD /* UICollectionView+extension.swift in Sources */,
 				A07C1D6120EDC63E0070F3DD /* ServiceCatalogItemCell.swift in Sources */,
